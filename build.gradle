@@ -1,0 +1,47 @@
+group 'com.tutorial.bddframework'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+
+
+configurations {
+    cucumberRuntime.extendsFrom testRuntime
+}
+
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'com.bddframework', 'src/test/resources']
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    //jcenter()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server-standalone
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-server-standalone', version: '2.44.0'
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    // compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.4.0'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    testCompile 'io.cucumber:cucumber-java:3.0.2'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+    testCompile 'io.cucumber:cucumber-junit:3.0.2'
+
+
+
+}
+
