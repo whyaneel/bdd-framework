@@ -25,12 +25,11 @@ task cucumber() {
 
 repositories {
     mavenCentral()
-    //jcenter()
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server-standalone
-    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-server-standalone', version: '2.44.0'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.13.0'
 
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     // compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.4.0'
@@ -40,8 +39,6 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
     testCompile 'io.cucumber:cucumber-junit:3.0.2'
-
-
 
 }
 
