@@ -1,7 +1,6 @@
 package com.bddframework.definitions;
 
 import com.bddframework.hooks.WebDriverHook;
-import com.sun.xml.internal.bind.v2.TODO;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -15,20 +14,20 @@ public class FacebookLoginSteps {
 
     WebDriver driver;
 
-    @Given("launch  a chrome browser with facebook login url")
-    public void launch_a_chrome_browser_with_facebook_login_url() {
+    @Given("launch  a chrome browser with facebook login url \"([^\"]*)\"")
+    public void launch_a_chrome_browser_with_facebook_login_url(String login_url) {
         driver = WebDriverHook.driver;
-        driver.get("https://www.facebook.com/login.php");
+        driver.get(login_url);
     }
 
-    @When("user enter a valid username")
-    public void user_enter_a_valid_username() {
-        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("username@facebook.com");
+    @When("user enter a valid username \"([^\"]*)\"")
+    public void user_enter_a_valid_username(String username) {
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys(username);
     }
 
-    @When("a valid password")
-    public void a_valid_password() {
-        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("password_for_facebook");
+    @When("a valid password \"([^\"]*)\"")
+    public void a_valid_password(String password) {
+        driver.findElement(By.xpath("//input[@name='pass']")).sendKeys(password);
         driver.findElement(By.xpath("//button[@name='login']")).click();
     }
 
