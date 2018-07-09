@@ -14,7 +14,7 @@ public class WebDriverHook {
         String clientOS = System.getProperty("os.name");
         System.out.println("This is " + clientOS);
 
-        //Chrome Web Driver for Mac OS X 64 Bit
+        //TODO : This Web Driver is only for Mac OS X 64 Bit, we can use if-else to decide Web Driver conditionally
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver_mac64");
 
         driver = new ChromeDriver();
@@ -24,6 +24,6 @@ public class WebDriverHook {
 
     @After
     public void close(){
-        driver.close();
+        //driver.close();
     }
 }
