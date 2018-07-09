@@ -5,11 +5,19 @@ BDD Framework Implementations using Cucumber + Selenium in Java
 ```
 Describe your tests here in simple english following Gherkin syntax, which can later serve as automation test script as well as user stories document. Cucumber finds the *.feature file with the help of "features" code in Cucumber Options.
 ```
-### Keywords#
-* **Feature:** Defines what feature you will be testing in the tests below
-* **Given:** Tells the pre-condition of the test
-* **And:** Defines additional conditions of the test
-* **Then:** States the post condition. You can say that it is expected result of the test.
+### Keywords (reference: https://docs.cucumber.io/gherkin/reference/)
+The primary keywords are:
+* Feature
+* Example (Scenario and Scenario Outline are synonyms)
+* Given, When, Then, And, But (steps)
+* Background
+* Combinations (Examples is a synonym)
+
+There are a few secondary keywords as well:
+* """ (Doc Strings)
+* | (Data Tables)
+* @ (Tags)
+* \# (Comments)
 
 # Code Structure
 ### Step Definitions
