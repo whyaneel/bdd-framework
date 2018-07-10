@@ -14,7 +14,7 @@ WebDriver is placed at /src/test/resources/drivers/chromedriver_mac64
 public class WebDriverHook {
     public static WebDriver driver;
 
-    @Before
+    @Before("@OpenBrowser")
     public void open() {
         String clientOS = System.getProperty("os.name");
         System.out.println("This is " + clientOS);
@@ -27,8 +27,9 @@ public class WebDriverHook {
         driver.manage().window().maximize();
     }
 
-    @After
+    @After("@CloseBrowser")
     public void close(){
         driver.close();
+        System.out.println("close");
     }
 }

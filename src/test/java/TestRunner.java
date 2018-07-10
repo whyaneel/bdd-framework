@@ -6,7 +6,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "classpath:features",
-        glue = {"com.bddframework"}
+        glue = {"com.bddframework"},
+		strict = true,
+		dryRun = false,
+		monochrome = true,
+		tags = {}
 )
 /*
 This JUnit TestRunner is equivalent to gradle task cucumber().
