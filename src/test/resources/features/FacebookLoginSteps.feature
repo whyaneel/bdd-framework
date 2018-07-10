@@ -2,8 +2,7 @@ Feature: Test Facebook Login Page
 
   Scenario Outline: Test Facebook Login with valid credentials
    Given launch  a chrome browser with facebook login url "https://www.facebook.com/login.php"
-   When user enter a valid username "<username>"
-   And a valid password "<password>"
+   When user enter a valid username "<username>" and a valid password "<password>"
    Then user should be able to login successfully
 
 
