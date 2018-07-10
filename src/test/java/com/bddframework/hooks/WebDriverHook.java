@@ -6,6 +6,11 @@ import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/*
+This Hook is a web driver, which can be either chrome, firefox, ie, safari browsers.
+The following example will have chrome browser which can run on Mac OS X 64 bit.
+WebDriver is placed at /src/test/resources/drivers/chromedriver_mac64
+ */
 public class WebDriverHook {
     public static WebDriver driver;
 

@@ -8,6 +8,9 @@ import cucumber.api.junit.Cucumber;
         features = "classpath:features",
         glue = {"com.bddframework"}
 )
+/*
+This JUnit TestRunner is equivalent to gradle task cucumber().
+ */
 public class TestRunner {
 
 }
